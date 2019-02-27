@@ -1,0 +1,53 @@
+#
+#  Default .profile for bash/ksh/sh user of NF systems.  
+#
+#  Commands in this file are executed:
+#  when a bash user first logs in
+#
+#  This file may alternatively be called $HOME/.bash_profile,
+#  $HOME/.bash_login or $HOME/.profile - the first one of these
+#  found is used.
+#
+#  The environment variables (and ulimits) set here will be 
+#  inherited by subshells.  Use this file to set up your 
+#  environment for an interactive session or a batch job.  
+#  Most of the environment can be set using module commands.
+#  Include commonly used module commands below but be wary of 
+#  loading too many modules - you are likely to incur conflicts.
+#  It is usually better to load the modules required by a bacth
+#  in the batch script.
+#
+#  See http://nf.nci.org.au/facilities/software/modules.php
+#  for instructions on how to set your environment to use specific
+#  software packages.
+#
+#  Note that the .bashrc file is NOT executed at login time but 
+#  instead every time a sh or bash script is run. 
+#
+#  $Id: default.profile,v 1.4 2008/12/18 00:08:09 dbs900 Exp $
+#
+
+#  By default .bashrc file is NOT sourced at login time but is in
+#  subshells.  Source here to pick up aliases etc.
+
+[ -f $HOME/.bashrc ] && . $HOME/.bashrc
+
+umask 027
+
+# module load dot adds the current directory to the end of your commands
+# search path
+
+module load dot
+module load java
+module load molden
+
+export PATH=/short/k96/apps/bin:$PATH
+
+export LC_AL="en_US.utf-8"
+export LANG="en_US.utf-8"
+
+alias q="qsub *.job"
+alias sed="sed -i"
+alias grep="grep -rn" 
+alias del="rm -r psi.clean *.log *.jo.* *.job.* *.j.* *.dat *.F* s*"
+alias sd="sed -i 's/walltime=10:00:00/walltime=24:00:00/g' *.job && sed -i 's/walltime=1:00:00/walltime=10:00:00/g' *.job && sed -i 's/walltime=5:00:00/walltime=15:00:00/g' *.job"
