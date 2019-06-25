@@ -38,3 +38,6 @@ endtry
 " Marks will be remembered for the last 100 edited files
 " disable highlighting when Vim starts
 :set viminfo='100,s100,h
+
+" LINE NUMBERS
+:set number
