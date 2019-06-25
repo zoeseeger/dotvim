@@ -24,3 +24,11 @@ Pathogen in autoload allowing plugins to be stored as bundles (easier installati
 ## Add plugin/bundle with pathogen
 
     git clone <git-url> ~/.vim/bundle/<name-of-new-bundle>
+
+## For remote access fetch, push and pull:
+
+In .git/config to be able to fetch, pull, push etc. change:
+
+    url = https://github.com/zoeseeger/dotvim.git
+to
+    url = https://zoeseeger@github.com/zoeseeger/dotvim.git
