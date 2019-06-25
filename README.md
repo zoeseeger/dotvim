@@ -3,7 +3,8 @@
 #### Download:
 
     cd ~
-    git clone git:https://github.com/zoeseeger/dotvim
+    git clone https://github.com/zoeseeger/dotvim
+    mv dotvim .vim
 
 #### Create symlinks:
 
