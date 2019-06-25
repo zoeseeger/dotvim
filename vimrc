@@ -30,3 +30,11 @@ try
 source ~/.vim/my_configs.vim
 catch
 endtry
+
+" PRINT SPECIAL LINE CHARACTERS
+:set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+:set list
+
+" Marks will be remembered for the last 100 edited files
+" disable highlighting when Vim starts
+:set viminfo='100,s100,h
