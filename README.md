@@ -31,4 +31,5 @@ In .git/config to be able to fetch, pull, push etc. change:
 
     url = https://github.com/zoeseeger/dotvim.git
 to
+    
     url = https://zoeseeger@github.com/zoeseeger/dotvim.git
