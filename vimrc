@@ -41,3 +41,9 @@ endtry
 
 " LINE NUMBERS
 :set number
+
+" PERSISTENT UNDO
+set undodir=$HOME/.vim/undo
+set undofile
+set undolevels=1000
+set undoreload=10000
